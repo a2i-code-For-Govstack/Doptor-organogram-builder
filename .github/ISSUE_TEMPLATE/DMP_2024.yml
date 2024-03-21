@@ -1,0 +1,116 @@
+name: DMP 2024 Project Template	
+description: List a new project for Dedicated Mentoring Program (DMP) 2024 
+title: "[DMP 2024]: "
+labels: ["DMP 2024"]
+body:
+  - type: textarea
+    id: ticket-description
+    validations:
+      required: true
+    attributes:
+      label: Ticket Contents
+      value: |
+        ## Description
+        Organogram Builder is the process of information and communication technology (ICT) for delivering government services.  Organogram Builder facilitates the process of create government office-related organogram with office name in bangla, office name in english, office id, office ministry name, office custom layer, office unit name, officer unit organogram, office designation. Also this platform use to create government employee using mandatory information such as employee name in bangla, employee name in english, employee date of birth, employee NID, employee blood group, employee gender, employee phone number , employee alternative phone number, employee email address, employee fathers name in bangla, employee fathers name in english, employee mothers name in bangla, employee mothers name in english, employee joining date, employee batch id , employee cadre id , employee non cadre id , employee designation. By using this platform, admin can assign the employee to his office designation. A dedicated office admin created for each office. Office admin will create the unit admin, office head, office unit head for maintain the organograms. Every admin, employe can login this application with his ID/password. Overall, Organogram Builder provides a comprehensive solution for creating organograms and managing government employees efficiently.
+        
+        **Development new feature:**
+        1. Develop an intuitive interface for users to create, modify, and customize the organizational chart based on their requirements.
+        2. Integrate the organogram builder with user profiles to accurately map employees to their designated positions within the organizational structure.
+
+  - type: textarea
+    id: ticket-goals
+    validations:
+      required: true
+    attributes:
+      label: Goals & Mid-Point Milestone
+      value: |
+        ## Goals for a Template Builder:
+        - [ ] Streamlining Organogram Creation: The primary goal is to simplify and streamline the process of creating organograms for offices. This involves providing a user-friendly interface where administrators can easily input office names, ministry names, custom layers, unit names, and designations in both Bangla and English.
+        - [ ] Efficient Employee Management: Another goal is to facilitate efficient management of government employees. The application aims to centralize employee information, including personal details, contact information, employment history, and designations, making it easier for administrators to assign employees to their respective positions within the office organogram.
+        - [ ] Enhancing Administrative Hierarchy: The application aims to establish a clear administrative hierarchy within government offices. This includes assigning dedicated office admins responsible for user management, as well as defining roles for office heads, unit heads, and other personnel involved in maintaining organograms and managing employees.
+        - [ ] Efficient Organogram Creation Milestone: Develop a user-friendly interface for creating organograms with essential features such as office name input (in both Bangla and English), ministry name selection, and designation assignment.
+        - [ ] Streamlined Employee Management Milestone: Design a comprehensive employee profile form with mandatory fields for employee information, including personal details, contact information, and employment history. 
+        - [ ] User Authentication and Access Control Milestone: Develop a secure login system for admins, office heads, unit heads, and employees with unique ID/password credentials. 
+        - [ ] Testing and Refinement Milestone: Conduct esting with a small group of users to gather feedback and identify bugs. 
+
+  - type: textarea
+    id: ticket-setup
+    attributes:
+      label: Setup/Installation 
+      value: |
+        Installations guidelines:
+        - Clone your project
+        - Go to the folder application using cd command on your cmd or terminal
+        - Run composer install on your cmd or terminal
+        - Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows or cp .env.example .env if using terminal, Ubuntu
+        - Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
+        - Run php artisan key:generate
+        - Run php artisan migrate
+        - Run php artisan serve
+        - Go to http://localhost:8000/
+
+  - type: textarea
+    id: ticket-expected-outcome
+    attributes:
+      label: Expected Outcome
+      value: |
+        Make the product as plug and playable, more integratable, and user-friendly.
+
+  - type: textarea
+    id: ticket-acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      value: |
+        Better Ui/ Ux and easy integration feature with any system
+
+  - type: textarea
+    id: ticket-implementation-details
+    validations:
+      required: true
+    attributes:
+      label: Implementation Details
+      value: |
+        The project will be developed using Laravel framework. Specific tasks include:
+        1. Develop an intuitive interface for users to create, modify, and customize the organizational chart based on their requirements.
+        2. Integrate the organogram builder with user profiles to accurately map employees to their designated positions within the organizational structure.
+
+  - type: textarea
+    id: ticket-mockups
+    attributes:
+      label: Mockups/Wireframes
+      value: |
+        N/A
+
+  - type: input
+    id: ticket-product
+    attributes:
+      label: Product Name
+      placeholder: Organogram Builder
+    validations:
+      required: true
+
+  - type: textarea
+    id: ticket-organisation
+    attributes:
+      label: Organisation Name
+      description: Enter Organisation Name
+      value: a2i
+    validations:
+      required: true
+
+  - type: textarea
+    id: ticket-governance-domain
+    attributes:
+      label: Domain
+      description: Enter the domain of the project
+      value: N/A
+    validations:
+      required: true
+
+  - type: textarea
+    id: ticket-technical-skills-required
+    attributes:
+      label: Tech Skills Needed
+      value: Laravel, API ,PHP
+    validations:
+      required: true
