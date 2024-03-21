@@ -1,0 +1,235 @@
+@media print {
+
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+
+}
+
+.load-table-data {
+    width: 100%;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+.form-group .select2-container {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin-bottom: 20px;
+
+
+}
+
+.select2-container .select2-selection--single {
+    height: 40px;
+    border: 1px solid #e2e5ec;
+    border-radius: 0;
+}
+
+.btn-songrokkhon {
+    margin-top: 8px;
+}
+
+* {
+    font-family: Nikosh, SolaimanLipi, sans-serif;
+}
+
+.table-head-color {
+    background: #ebedf2;
+}
+
+.padding-left-15 {
+    padding-left: 15px
+}
+
+.custom-table-border tr th {
+    border: 1px solid #d0d8f5;
+}
+
+.btn-h-w {
+    height: 30px;
+    width: 30px;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--active > .kt-menu__heading,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--active > .kt-menu__link {
+    background-color: #5578eb;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 98%;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+    background-color: #f3f6f9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 98%;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+    background-color: #f3f6f9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 98%;
+}
+
+.kt-menu__item .kt-menu__item--active i {
+    color: white;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+    background-color: #f3f6f9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 98%;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item {
+    position: relative;
+    margin: 0;
+    width: 98%;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__heading,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+    background-color: #cbd6f1;
+    font-size: 13px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 98%;
+}
+
+.overflow-hidden-x {
+    overflow-x: hidden;
+}
+
+.overflow-hidden-y {
+    overflow-y: hidden;
+}
+
+.kt-aside--minimize .kt-aside__brand .brand-logo img .kt-header-mobile__logo img {
+    display: none;
+}
+
+.master-brand-logo {
+    display: none;
+}
+
+.kt-aside--minimize-hover .master-brand-logo {
+    display: block;
+}
+
+.kt-aside--fixed .master-brand-logo {
+    display: block;
+}
+
+.kt-aside--fixed.kt-aside--minimize .master-brand-logo {
+    display: none;
+}
+
+.kt-aside--minimize-hover img {
+    width: 140px;
+
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.custom-select {
+    font-size: 1.2rem;
+}
+
+.no-drop {
+    cursor: no-drop;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.tapp_table th {
+    position: sticky !important;
+    top: 64px;
+    background: #eaedf2;
+}
+
+.datepicker {
+    z-index: 9999 !important;
+}
+
+/* sna css */
+.sna-common-content-border {
+    border: 1px solid #dadada;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.sna-subheader {
+    border-radius: 6px 6px 0 0;
+    background: #5578EB;
+}
+
+.btn-sna-header-button-color {
+    background: #eff4ff;
+    font-size: 20px;
+    color: #5479ea;
+}
+
+@font-face {
+    font-family: SutonnyBanglaFont;
+    src: url(/fonts/SutonnyMJ.woff);
+}
+
+.bijoy-bangla {
+    font-family: SutonnyBanglaFont, serif;
+}
+
+.toast-message {
+    font-size: 1.1rem !important;
+}
+
+.widget_container {
+    margin-right: 40px;
+}
+
+.widget_container span svg {
+    width: 32px !important;
+}
+
+.es_links_wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.es_links_wrap a {
+    width: 30% !important;
+
+}
+
+.es_links_wrap a img {
+    max-width: 100% !important;
+
+}
+
+
+.kt-aside--minimize span, .kt-aside--minimize-hover span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: inherit;
+}
+
+.jstree-disabled {
+    color: #0abb87 !important;
+}

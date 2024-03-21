@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "colors.scss";
+@import 'header.scss';
+@import 'sidebar.scss';
+@import 'formField.scss';
+@import 'tree-custom.scss';
+@import 'bodyContent.scss';
+
+
+.side-panel-overlay{
+    position: relative;
+}
+.side-panel-overlay::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 111;
+}
+// .kt-demo-panel{
+//     max-width:100% !important;
+//     width:auto !important;
+//     min-width: 350px !important;
+//     position: fixed;
+//     overflow-x: hidden;
+//     border-left: 5px double #b5b5c3 !important;
+// }
+// .kt-demo-panel__close:hover{
+//     background: #fd397a !important;
+//     border-color: #fd397a  !important;
+// }
+.kt-quick-panel .kt-quick-panel__close:hover {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: #fd397a;
+}
+@media screen and (max-width: 1024px){
+    .modal-lg, .modal-xl {
+        max-width: 980px;
+    }
+}
+
+@media print { 
+ /* All your print styles go here */
+ .dont-print { display: none !important; } 
+}
