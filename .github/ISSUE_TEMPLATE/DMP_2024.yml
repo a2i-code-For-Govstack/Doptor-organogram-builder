@@ -1,4 +1,4 @@
-name: DMP 2024 Project Template	
+name: DMP 2024 Project Template
 description: List a new project for Dedicated Mentoring Program (DMP) 2024 
 title: "[DMP 2024]: "
 labels: ["DMP 2024"]
@@ -11,11 +11,7 @@ body:
       label: Ticket Contents
       value: |
         ## Description
-        Organogram Builder is the process of information and communication technology (ICT) for delivering government services.  Organogram Builder facilitates the process of create government office-related organogram with office name in bangla, office name in english, office id, office ministry name, office custom layer, office unit name, officer unit organogram, office designation. Also this platform use to create government employee using mandatory information such as employee name in bangla, employee name in english, employee date of birth, employee NID, employee blood group, employee gender, employee phone number , employee alternative phone number, employee email address, employee fathers name in bangla, employee fathers name in english, employee mothers name in bangla, employee mothers name in english, employee joining date, employee batch id , employee cadre id , employee non cadre id , employee designation. By using this platform, admin can assign the employee to his office designation. A dedicated office admin created for each office. Office admin will create the unit admin, office head, office unit head for maintain the organograms. Every admin, employe can login this application with his ID/password. Overall, Organogram Builder provides a comprehensive solution for creating organograms and managing government employees efficiently.
-        
-        **Development new feature:**
-        1. Develop an intuitive interface for users to create, modify, and customize the organizational chart based on their requirements.
-        2. Integrate the organogram builder with user profiles to accurately map employees to their designated positions within the organizational structure.
+        [Provide a brief description of the feature, including why it is needed and what it will accomplish.]
 
   - type: textarea
     id: ticket-goals
@@ -23,45 +19,32 @@ body:
       required: true
     attributes:
       label: Goals & Mid-Point Milestone
+      description: List the goals of the feature. Please add the goals that must be achieved by Mid-point check-in i.e 1.5 months into the coding period.
       value: |
-        ## Goals for a Template Builder:
-        - [ ] Streamlining Organogram Creation: The primary goal is to simplify and streamline the process of creating organograms for offices. This involves providing a user-friendly interface where administrators can easily input office names, ministry names, custom layers, unit names, and designations in both Bangla and English.
-        - [ ] Efficient Employee Management: Another goal is to facilitate efficient management of government employees. The application aims to centralize employee information, including personal details, contact information, employment history, and designations, making it easier for administrators to assign employees to their respective positions within the office organogram.
-        - [ ] Enhancing Administrative Hierarchy: The application aims to establish a clear administrative hierarchy within government offices. This includes assigning dedicated office admins responsible for user management, as well as defining roles for office heads, unit heads, and other personnel involved in maintaining organograms and managing employees.
-        - [ ] Efficient Organogram Creation Milestone: Develop a user-friendly interface for creating organograms with essential features such as office name input (in both Bangla and English), ministry name selection, and designation assignment.
-        - [ ] Streamlined Employee Management Milestone: Design a comprehensive employee profile form with mandatory fields for employee information, including personal details, contact information, and employment history. 
-        - [ ] User Authentication and Access Control Milestone: Develop a secure login system for admins, office heads, unit heads, and employees with unique ID/password credentials. 
-        - [ ] Testing and Refinement Milestone: Conduct esting with a small group of users to gather feedback and identify bugs. 
+        ## Goals
+        - [ ] [Goal 1]
+        - [ ] [Goal 2]
+        - [ ] [Goal 3]
+        - [ ] [Goal 4]
+        - [ ] [Goals Achieved By Mid-point Milestone]
 
   - type: textarea
     id: ticket-setup
     attributes:
       label: Setup/Installation 
-      value: |
-        Installations guidelines:
-        - Clone your project
-        - Go to the folder application using cd command on your cmd or terminal
-        - Run composer install on your cmd or terminal
-        - Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows or cp .env.example .env if using terminal, Ubuntu
-        - Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
-        - Run php artisan key:generate
-        - Run php artisan migrate
-        - Run php artisan serve
-        - Go to http://localhost:8000/
+      description: Please list or link setup or installation guide (if any)
 
   - type: textarea
     id: ticket-expected-outcome
     attributes:
       label: Expected Outcome
-      value: |
-        Make the product as plug and playable, more integratable, and user-friendly.
+      description: Describe in detail what the final product or result should look like and how it should behave.
 
   - type: textarea
     id: ticket-acceptance-criteria
     attributes:
       label: Acceptance Criteria
-      value: |
-        Better Ui/ Ux and easy integration feature with any system
+      description: List the acceptance criteria for this feature.
 
   - type: textarea
     id: ticket-implementation-details
@@ -69,48 +52,211 @@ body:
       required: true
     attributes:
       label: Implementation Details
-      value: |
-        The project will be developed using Laravel framework. Specific tasks include:
-        1. Develop an intuitive interface for users to create, modify, and customize the organizational chart based on their requirements.
-        2. Integrate the organogram builder with user profiles to accurately map employees to their designated positions within the organizational structure.
+      description: List any technical details about the proposed implementation, including any specific technologies that will be used.
 
   - type: textarea
     id: ticket-mockups
     attributes:
       label: Mockups/Wireframes
-      value: |
-        N/A
+      description: Include links to any visual aids, mockups, wireframes, or diagrams that help illustrate what the final product should look like. This is not always necessary, but can be very helpful in many cases.
 
   - type: input
     id: ticket-product
     attributes:
       label: Product Name
-      placeholder: Organogram Builder
+      placeholder: Enter Product Name
     validations:
       required: true
 
-  - type: textarea
+  - type: dropdown
     id: ticket-organisation
     attributes:
       label: Organisation Name
       description: Enter Organisation Name
-      value: a2i
+      multiple: false
+      options:
+        - Bandhu
+        - Blockster Global (CREDBEL)
+        - Civis
+        - Dhwani
+        - Dhiway
+        - EGov
+        - EkShop Marketplace
+        - FIDE
+        - If Me
+        - Key Education Foundation
+        - Norwegian Meteorological Institute
+        - Planet Read
+        - Project Second Chance
+        - Reap Benefit
+        - SamagraX
+        - ShikshaLokam
+        - Tech4Dev
+        - Tekdi
+        - The Mifos Initiative
+        - Tibil
+        - Ushahidi
+        - Arghyam
+        - Piramal Swasthya Management Research Institute
     validations:
       required: true
 
-  - type: textarea
+  - type: dropdown
     id: ticket-governance-domain
     attributes:
       label: Domain
-      description: Enter the domain of the project
-      value: N/A
+      options:
+        - ⁠Healthcare 
+        - ⁠Education
+        - Financial Inclusion
+        - ⁠Livelihoods
+        - ⁠Skilling 
+        - ⁠Learning & Development
+        - ⁠Agriculture
+        - ⁠Service Delivery
+        - Open Source Library
+        - Water
+    validations:
+      required: true
+
+
+  - type: dropdown
+    id: ticket-technical-skills-required
+    attributes:
+      label: Tech Skills Needed
+      description: Select the technologies needed for this ticket (use Ctrl or Command to select multiple)
+      multiple: true
+      options:
+        - .NET
+        - Angular
+        - Artificial Intelligence
+        - ASP.NET
+        - AWS
+        - Babel
+        - Bootstrap
+        - C#
+        - Chart.js
+        - CI/CD
+        - Computer Vision
+        - CORS
+        - cURL
+        - Cypress
+        - D3.js
+        - Database
+        - Debugging
+        - Design
+        - DevOps
+        - Django
+        - Docker
+        - Electron
+        - ESLint
+        - Express.js
+        - Feature
+        - Flask
+        - Go
+        - GraphQL
+        - HTML
+        - Ionic
+        - Jest
+        - Java
+        - JavaScript
+        - Jenkins
+        - JWT
+        - Kubernetes
+        - Laravel
+        - Machine Learning
+        - Maintenance
+        - Markdown
+        - Material-UI
+        - Microservices
+        - MongoDB
+        - Mobile
+        - Mockups
+        - Mocha
+        - Natural Language Processing
+        - NestJS
+        - Node.js
+        - NUnit
+        - OAuth
+        - Performance Improvement
+        - Prettier
+        - Python
+        - Question
+        - React
+        - React Native
+        - Redux
+        - RESTful APIs
+        - Ruby
+        - Ruby on Rails
+        - Rust
+        - Scala
+        - Security
+        - Selenium
+        - SEO
+        - Serverless
+        - Solidity
+        - Spring Boot
+        - SQL
+        - Swagger
+        - Tailwind CSS
+        - Test
+        - Testing Library
+        - Three.js
+        - TypeScript
+        - UI/UX/Design
+        - Virtual Reality
+        - Vue.js
+        - WebSockets
+        - Webpack
+        - Other
     validations:
       required: true
 
   - type: textarea
-    id: ticket-technical-skills-required
+    id: ticket-mentors
     attributes:
-      label: Tech Skills Needed
-      value: Laravel, API ,PHP
+      label: Mentor(s)
+      description: Please tag relevant mentors for the ticket
     validations:
       required: true
+
+  - type: dropdown
+    id: ticket-category
+    attributes: 
+      label: Category
+      description: Choose the categories that best describe your ticket
+      multiple: true
+      options:
+        - API
+        - Analytics
+        - Accessibility
+        - Backend
+        - Breaking Change
+        - Beginner Friendly
+        - Configuration
+        - CI/CD
+        - Database
+        - Data Science
+        - Deprecation
+        - Documentation
+        - Delpoyment
+        - Frontend
+        - Internationalization
+        - Localization
+        - Machine Learning
+        - Maintenance
+        - Mobile
+        - Performance Improvement
+        - Question
+        - Refactoring
+        - Research
+        - Needs Reproduction
+        - SEO
+        - Security
+        - Testing
+        - AI
+        - Other
+    validations:
+      required: true
+
+  
