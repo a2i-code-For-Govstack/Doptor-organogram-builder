@@ -8,14 +8,6 @@
     <meta name="description" content="Updates and statistics">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <!--begin::Fonts -->
-    <style type="text/css">
-        @font-face {
-            font-family: SolaimanLipi;
-            src: url('{{ asset('/fonts/SolaimanLipi.ttf') }}');
-        }
-    </style>
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css"/>
     <!--begin::Layout Skins(used by all pages) -->
@@ -47,19 +39,24 @@
 
 <!-- begin:: Header Mobile -->
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+<div class="kt-header-mobile__toolbar">
+        <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left"
+                id="kt_aside_mobile_toggler"><span></span></button>
+        <!--<button class="kt-header-mobile__toggler" id="kt_header_mobile_toggler"><span></span></button>
+        <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i
+                class="flaticon-more"></i></button>-->
+    </div>
+    
     <div class="kt-header-mobile__logo">
         <a href="{{ url('dashboard') }}">
             <img alt="Logo" src="{{ asset('assets/img/ndoptor.svg') }}" style="width:50px;"/>
             <span style="font-size:15px!important;font-weight: bold;color: #5477ea;">N-Doptor</span>
         </a>
     </div>
-    <div class="kt-header-mobile__toolbar">
-        <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left"
-                id="kt_aside_mobile_toggler"><span></span></button>
-        <button class="kt-header-mobile__toggler" id="kt_header_mobile_toggler"><span></span></button>
-        <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i
-                class="flaticon-more"></i></button>
-    </div>
+    @if (Auth::user()->user_role_id == config('menu_role_map.user'))
+                        @include('partials.topbar.notification')
+                    @endif
+                    @include('partials.profile.quick_profile')
 </div>
 
 <!-- end:: Header Mobile -->
@@ -68,10 +65,10 @@
         <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop"
              id="kt_aside">
             <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
-                <div class="brand-logo m-auto master-brand-logo">
+                <div style="margin-left: -10px !important;" class="brand-logo m-auto master-brand-logo">
                     <a href="{{ url('dashboard') }}">
-                        <img alt="Logo" src="{{ asset('assets/img/ndoptor.svg') }}" style="width:50px;"/>
-                        <span style="font-size:15px!important;font-weight: bold;color: #5477ea;">N-Doptor</span>
+                        <img alt="Logo" src="{{ asset('https://mir-s3-cdn-cf.behance.net/projects/404/33a10f193868951.6624bdaeda569.png') }}" style="width:50px;"/>
+                        <!--<span style="font-size:20px!important;font-weight: bold;color: #5477ea;">Organogram</span>-->
                     </a>
                 </div>
                 <div class="kt-aside__brand-tools">
@@ -123,9 +120,9 @@
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
             <!-- begin:: Header -->
-            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="align-items: center;">
+            <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="align-items: center; justify-content: end;">
 
-                @include('partials.topbar.welcome')
+                <!--@include('partials.topbar.welcome')-->
                 <div class="kt-header__topbar">
 
                     <!--begin: Notification -->
@@ -133,6 +130,7 @@
                         @include('partials.topbar.notification')
                     @endif
                     @include('partials.profile.quick_profile')
+                    
                 </div>
             </div>
             <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor p-3" id="kt_content"

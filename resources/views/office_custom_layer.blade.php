@@ -1,5 +1,64 @@
 @extends('master')
 @section('content')
+
+<style>
+    @media (max-width: 575.98px) {
+        .ml-3 {
+        display: none;
+    }
+    .text-white{
+        padding-left: 50px;
+    }
+    #btn_excel_generate{
+        margin-left: 20px;
+    }
+    /* Base Styles for .kt-portlet__body */
+.kt-portlet__body {
+    padding: 15px;
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Responsive Styles */
+@media (max-width: 575.98px) {
+    .kt-portlet__body {
+        padding: 10px;
+    }
+    
+    .kt-portlet__body .table-responsive {
+        font-size: 14px; /* Adjust font size */
+    }
+    
+    .kt-portlet__body .btn {
+        width: 100%;
+        margin-bottom: 10px; /* Stack buttons vertically */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .kt-portlet__body {
+        padding: 15px;
+    }
+
+    .kt-portlet__body .table-responsive {
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+@media (min-width: 768px) {
+    .kt-portlet__body {
+        padding: 20px;
+    }
+
+    .kt-portlet__body .table-responsive {
+        font-size: 18px; /* Larger font size for bigger screens */
+    }
+}
+.dataTables_length {
+    display: none;
+}
+}
+</style>
+
     <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor sna-common-content-border"
          id="kt_content">
         <!--begin::Subheader-->

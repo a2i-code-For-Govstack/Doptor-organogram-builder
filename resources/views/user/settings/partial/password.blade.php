@@ -22,11 +22,11 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-alert">{{__('New Password')}}</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-alert">{{ __('New Password') }}</label>
                         <div class="col-lg-9 col-xl-9">
                             <input id="password" type="password" class="form-control form-control-lg form-control-solid checkPasword"
                                    onkeyup="getPassword(this)"
-                                   placeholder="{{__('New Password')}}">
+                                   placeholder="{{ __('New Password') }}">
                             <div onclick="togglePassword(this)"
                                  style="margin-top: -25px;display: block;margin-right: 15px;position: absolute;cursor: pointer;right: 0;">
                                 <i class="fa fa-eye"></i>
@@ -37,14 +37,17 @@
                         <label class="col-xl-3 col-lg-3 col-form-label text-alert">{{ __('Repeat Password') }}</label>
                         <div class="col-lg-9 col-xl-9">
                             <input id="confirm_password" type="password" class="form-control form-control-lg form-control-solid"
-                                   placeholder="{{  __('Repeat New Password') }}">
+                                   placeholder="{{ __('Repeat New Password') }}">
                         </div>
                     </div>
                     <div class="mt-5 d-flex justify-content-end">
                         <div class="btn-group">
                             <button onclick="changePass(event)" id="submitBtnP" disabled
                                     class="btn btn-success btn-sm btn-square"><i
-                                    class="fa fa-save"></i>{{ __('Save')}}</button>
+                                    class="fa fa-save"></i>{{ __('Save') }}</button>
+                            <button type="button" onclick="window.location.href='{{ route('password.request') }}'"
+                                    class="btn btn-secondary btn-sm btn-square ml-2"><i
+                                    class="fa fa-key"></i>{{ __('Forget Password') }}</button>
                         </div>
                     </div>
                 </div>
@@ -55,18 +58,18 @@
                             <!--begin::Item-->
                             <div class="">
                                 <p id="pass_strength_length" class="text-danger align-items-center correct-text"><i
-                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 8 characters.')}}</p>
+                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 8 characters.') }}</p>
                                 <p id="pass_strength_lowercase" class="text-danger align-items-center small-letter"><i
-                                        class="fas fa-times text-danger  mr-2"></i> {{ __('At least 1 lowercase letter.') }}
+                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 1 lowercase letter.') }}
                                 </p>
                                 <p id="pass_strength_uppercase" class="text-danger align-items-center capital-letter"><i
-                                        class="fas fa-times text-danger  mr-2"></i> {{ __('At least 1 uppercase letter.') }}
+                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 1 uppercase letter.') }}
                                 </p>
                                 <p id="pass_strength_number" class="text-danger align-items-center number-check"><i
-                                        class="fas fa-times text-danger  mr-2"></i> {{ __('At least 1 number.') }}</p>
+                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 1 number.') }}</p>
                                 <p id="pass_strength_special"
                                    class="text-danger align-items-center special-characters mb-0"><i
-                                        class="fas fa-times text-danger  mr-2"></i> {{ __('At least 1 special character.') }}
+                                        class="fas fa-times text-danger mr-2"></i> {{ __('At least 1 special character.') }}
                                 </p>
                             </div>
                             <!--end::Item-->
@@ -80,6 +83,7 @@
     </form>
     <!--end::Form-->
 </div>
+<!--end::Card-->
 
 <script>
 

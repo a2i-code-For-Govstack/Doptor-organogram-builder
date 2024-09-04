@@ -95,6 +95,98 @@
         #alertMessage {
             padding-left: 5px;
         }
+        /* General adjustments for responsiveness */
+@media (max-width: 768px) {
+    .pt-4{
+        display: inline-block;
+    }
+    .kt-aside__brand-logo span,
+    .kt-aside--minimize span,
+    .kt-aside--minimize-hover span,
+    .kt-header-mobile__logo span {
+        font-size: 10px !important;
+    }
+
+    .form-control-solid {
+        height: 28px;
+    }
+
+    .page-title-wrapper {
+        font-size: 14px;
+    }
+
+    .pro-con-sec span {
+        font-size: 13px !important;
+    }
+
+    .col-md-3, .col-md-9 {
+        width: 100%;
+    }
+
+    .col-md-3 {
+        border-right: none;
+    }
+
+    .profile_area {
+        padding-left: 0;
+    }
+
+    #myvTab .nav-tabs .nav-item .nav-link {
+        font-size: 13px !important;
+    }
+
+    #myvTab .nav-tabs .nav-item .nav-link i {
+        font-size: 12px;
+    }
+}
+
+/* Ensure the profile image and text are responsive */
+#profile_page_pic {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .d-flex {
+        flex-direction: row;
+    }
+}
+/* Base styles for the scrollable container */
+.profile-scrollable {
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    overflow-y: hidden; /* Hide vertical overflow */
+    padding: 15px;
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+    #kt_profile_scroll {
+        max-height: 500px; /* Adjust height based on your content */
+        overflow-y: auto; /* Enable vertical scrolling if needed */
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    #kt_profile_scroll {
+        max-height: 400px; /* Adjust height for smaller screens */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+    .badge{
+        display: none;
+    }
+}
+
+
     </style>
 @endsection
 @section('content')
@@ -234,6 +326,22 @@
                                        class="nav-link  d-flex pointer" data-toggle="tab" role="tab" aria-controls="">
                                         <div><i class="fa fa-file-image"></i></div>
                                         <div style="margin-top:2px;">Profile Picture</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="workHistoryBtn"
+                                       onclick="profileManager('{{ url('change-profile/work-history') }}', 'workHistoryBtn')"
+                                       class="nav-link  d-flex pointer" data-toggle="tab" role="tab" aria-controls="">
+                                        <div><i class="fa fa-file-image"></i></div>
+                                        <div style="margin-top:2px;">Work History</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="signatureBtn"
+                                       onclick="profileManager('{{ url('change-profile/signature') }}', 'signatureBtn')"
+                                       class="nav-link  d-flex pointer" data-toggle="tab" role="tab" aria-controls="">
+                                        <div><i class="fa fa-sign"></i></div>
+                                        <div style="margin-top:2px;">Signature</div>
                                     </a>
                                 </li>
                             @endif

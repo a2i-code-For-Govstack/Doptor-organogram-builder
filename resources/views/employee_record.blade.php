@@ -1,5 +1,124 @@
 @extends('master')
 @section('content')
+<style>
+    /* Base Styles */
+.kt-portlet__body {
+    padding: 15px;
+    overflow: hidden;
+}
+
+.card.custom-card {
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 575.98px) {
+    .sna-subheader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sna-subheader .btn, .sna-subheader h3 {
+        margin-bottom: 10px;
+    }
+
+    .kt-portlet__body {
+        padding: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-group {
+        width: 100%;
+        text-align: center;
+    }
+
+    .kt-quick-panel__content {
+        padding: 15px;
+    }
+
+    .kt-scrolltop {
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Responsive Styles for Tablets and Larger Devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .sna-subheader {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sna-subheader .btn {
+        margin-right: 10px;
+    }
+
+    .kt-portlet__body {
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-group {
+        text-align: right;
+    }
+
+    .kt-scrolltop {
+        display: block;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Responsive Styles for Desktops */
+@media (min-width: 768px) {
+    .sna-subheader {
+        flex-direction: row;
+    }
+
+    .kt-portlet__body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-group {
+        text-align: right;
+    }
+
+    .kt-scrolltop {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+.dataTables_length,.ml-3 {
+    display: none;
+}
+
+.table {
+    min-width: 600px; /* Adjust based on your table width */
+}
+</style>
     <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor sna-common-content-border"
          id="kt_content">
         <!--begin::Subheader-->

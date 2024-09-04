@@ -1,217 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive design -->
     <meta charset="utf-8">
     <meta name="author" content="Kodinger">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title of the page -->
     <title>Organogram Builder</title>
-    <link rel="stylesheet" href="{{asset('assets/guest/css/style.bundle.css')}}">
+
+    <!-- CSS files for styling -->
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
-        html, body {
-            height: 100%;
-        }
-
-        body.my-login-page {
-            background-color: #f7f9fb;
-            font-size: 14px;
-        }
-
-        .my-login-page .brand {
-            width: 90px;
-            height: 90px;
-            overflow: hidden;
-            border-radius: 50%;
-            margin: 40px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
-            position: relative;
-            z-index: 1;
-        }
-
-        .my-login-page .brand img {
-            width: 100%;
-        }
-
-        .my-login-page .card-wrapper {
-            width: 400px;
-        }
-
-        .my-login-page .card {
-            border-color: transparent;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
-        }
-
-        .my-login-page .card.fat {
-            padding: 10px;
-        }
-
-        .my-login-page .card .card-title {
-            margin-bottom: 30px;
-        }
-
-        .my-login-page .form-control {
-            border-width: 2.3px;
-        }
-
-        .my-login-page .form-group label {
-            width: 100%;
-        }
-
-        .my-login-page .btn.btn-block {
-            padding: 12px 10px;
-        }
-
-        .my-login-page .footer {
-            margin: 40px 0;
-            color: #888;
-            text-align: center;
-        }
-
-        @media screen and (max-width: 425px) {
-            .my-login-page .card-wrapper {
-                width: 90%;
-                margin: 0 auto;
-            }
-        }
-
-        @media screen and (max-width: 320px) {
-            .my-login-page .card.fat {
-                padding: 0;
-            }
-
-            .my-login-page .card.fat .card-body {
-                padding: 15px;
-            }
-        }
     </style>
+
+    <!-- Google Translate script for language selection -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
+<body>
+    <!-- Navbar with logo and language selector -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar__logo">
+                <img src="https://seeklogo.com/images/A/a2i-logo-5D16E2F1C3-seeklogo.com.png" alt="Logo">
+            </div>
+            <div class="navbar-language" id="google_translate_element"></div>
+        </div>
+    </nav>
 
-<body class="my-login-page">
-<section class="h-100">
-    <div class="container h-100">
-        <div class="row justify-content-md-center h-100">
-            <div class="card-wrapper">
-                <div class="brand">
-                    <img src="{{asset('assets/img/ndoptor.svg')}}" alt="logo">
+    <!-- Login card container -->
+    <div class="my-login-page">
+        <div class="card">
+            <!-- Login title with icon -->
+            <h4 class="card-title"><i class="bi bi-person-check"></i> Login</h4>
+            <hr>
+            <!-- Display errors, if any -->
+            @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="card fat">
-                    <div class="card-body">
-                        <h4 class="card-title">Login</h4>
-                        @if ($errors->any())
-                            <div class="alert alert-danger border-left-danger" role="alert">
-                                <ul class="pl-4 my-2">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <form method="POST" class="my-login-validation" action="{{route('login')}}" novalidate="">
-                            @csrf
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input id="username" type="text" class="form-control" name="username" value="" required
-                                       autofocus>
-                                <div class="invalid-feedback">
-                                    Username is invalid
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Password
-                                    <a href="{{route('password.request')}}" class="float-right">
-                                        Forgot Password?
-                                    </a>
-                                </label>
-                                <input id="password" type="password" class="form-control" name="password" required
-                                       data-eye>
-                                <div class="invalid-feedback">
-                                    Password is required
-                                </div>
-                            </div>
-                            <div class="form-group m-0">
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    Login
-                                </button>
-                            </div>
-                        </form>
+            @endif
+            <!-- Login form -->
+            <form method="POST" class="my-login-validation" action="{{ route('login') }}" novalidate>
+                @csrf
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" class="form-control shadow-green" name="username" required autofocus>
+                    <div class="invalid-feedback">
+                        Username is invalid
                     </div>
                 </div>
-                <div class="footer">
-                    Copyright &copy; {{date('Y')}} &mdash; Organogram Builder
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" class="form-control shadow-green" name="password" required>
+                    <div class="invalid-feedback">
+                        Password is required
+                    </div>
+                    <!-- Show password button with icon -->
+                    <div id="passeye-toggle" class="btn-show-password">
+                        <i class="bi bi-eye"></i> 
+                    </div>
                 </div>
-            </div>
+                <a href="{{ route('password.request') }}" class="float-right">Forgot Password?</a><br>
+
+                <div class="form-group m-1">
+                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                </div>
+                
+                <hr>
+                <div class="text-center">
+                    <a href="{{ route('register') }}">Create an Account</a>
+                </div>
+            </form>
         </div>
     </div>
-</section>
 
-<script src="{{asset('assets/guest/plugins.bundle.js')}}"></script>
-<script>
-    'use strict';
+    <!-- Footer with copyright information -->
+    <div class="footer">
+    Copyright &copy; {{ date('Y') }} &mdash; Organogram Builder
+</div>
 
-    $(function () {
-        $("input[type='password'][data-eye]").each(function (i) {
-            var $this = $(this),
-                id = 'eye-password-' + i,
-                el = $('#' + id);
+    <!-- External JavaScript files -->
+    <script src="{{ asset('assets/guest/plugins.bundle.js') }}"></script>
 
-            $this.wrap($("<div/>", {
-                style: 'position:relative',
-                id: id
-            }));
+    <script>
+        'use strict';
 
-            $this.css({
-                paddingRight: 60
-            });
-            $this.after($("<div/>", {
-                html: 'Show',
-                class: 'btn btn-primary btn-sm',
-                id: 'passeye-toggle-' + i,
-            }).css({
-                position: 'absolute',
-                right: 10,
-                top: ($this.outerHeight() / 2) - 12,
-                padding: '2px 7px',
-                fontSize: 12,
-                cursor: 'pointer',
-            }));
+        $(function () {
+            // Toggle the visibility of the password field when the show button is clicked
+            $("#passeye-toggle").on("click", function () {
+                var passwordInput = $("#password");
+                var icon = $(this).find("i");
 
-            $this.after($("<input/>", {
-                type: 'hidden',
-                id: 'passeye-' + i
-            }));
-
-            var invalid_feedback = $this.parent().parent().find('.invalid-feedback');
-
-            if (invalid_feedback.length) {
-                $this.after(invalid_feedback.clone());
-            }
-
-            $this.on("keyup paste", function () {
-                $("#passeye-" + i).val($(this).val());
-            });
-            $("#passeye-toggle-" + i).on("click", function () {
-                if ($this.hasClass("show")) {
-                    $this.attr('type', 'password');
-                    $this.removeClass("show");
-                    $(this).removeClass("btn-outline-primary");
+                if (passwordInput.attr("type") === "password") {
+                    passwordInput.attr("type", "text"); // Show the password
+                    icon.removeClass("bi-eye").addClass("bi-eye-slash"); // Change icon to "eye-slash"
+                    $(this).html('<i class="bi bi-eye-slash"></i>'); // Change text to "Hide"
                 } else {
-                    $this.attr('type', 'text');
-                    $this.val($("#passeye-" + i).val());
-                    $this.addClass("show");
-                    $(this).addClass("btn-outline-primary");
+                    passwordInput.attr("type", "password"); // Hide the password
+                    icon.removeClass("bi-eye-slash").addClass("bi-eye"); // Change icon back to "eye"
+                    $(this).html('<i class="bi bi-eye"></i>'); // Change text back to "Show"
                 }
             });
+
+            // Validate the form before submitting
+            $(".my-login-validation").submit(function (event) {
+                var form = $(this);
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.addClass('was-validated');
+            });
         });
 
-        $(".my-login-validation").submit(function () {
-            var form = $(this);
-            if (form[0].checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.addClass('was-validated');
+        // Observer to remove unwanted text from the Google Translate widget
+        const sc = document.querySelector('.navbar-language');
+        const config = { attributes: false, childList: true, subtree: true };
+        const observer = new MutationObserver(function (mutationsList, observer) {
+            const sc = document.querySelector('.goog-te-gadget');
+            sc.childNodes[1].textContent = ''; // Remove the "Translate" label
         });
-    });
-</script>
+
+        observer.observe(sc, config);
+    </script>
 </body>
 </html>
