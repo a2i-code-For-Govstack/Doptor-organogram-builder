@@ -1,0 +1,87 @@
+.kt_header{
+    border-bottom: 1px solid #ededed !important;
+}
+.kt-aside__brand{
+    height: 60px;
+}
+.kt-aside__brand-logo, .kt-aside--minimize, .kt-aside--minimize-hover, .kt-header-mobile__logo{
+    img{
+        width: 40px;
+    }
+    span{
+        font-size: 22px;
+        font-weight: 700;
+        color:$colorDark;
+        margin-left: 10px;
+    }
+}
+.kt-aside--minimize{
+    .kt-aside__brand-logo{
+        span{
+            display: none;
+        }
+    }
+}
+.kt-aside--minimize-hover{
+    .kt-aside__brand-logo{
+        span{
+            display: block;
+            font-size: 22px;
+            font-weight: 600;
+            color:$colorDark;
+            margin-left: 10px;
+        }
+    }
+}
+@media (min-width:1025px){
+    .kt-header{
+        border-bottom: 1px solid #ededed !important;
+    }
+    
+    .kt-header__topbar{
+        display: flex;
+        align-items: center;
+    }
+    .topbar-item{
+        &:hover{
+            background: transparent !important;
+        }
+    }
+    .btn{
+        &.btn-clean{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .kt-header--fixed .kt-wrapper{
+        padding-top: 64px;
+    }
+    #kt_wrapper{
+        padding-top: 64px;
+    }
+}
+.kt-aside__brand {
+    background-color: #ffffff;
+}
+.kt-header__topbar-item{
+    &:hover{
+        .kt-header__topbar-icon{
+            background: transparent !important;
+        }
+    }
+}
+.kt-header .kt-header__topbar .kt-header__topbar-item.show .kt-header__topbar-icon{
+    background: transparent !important;
+}
+.kt-header__topbar-item--user{
+    .font-size-base{
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .ant-typography{
+        font-size: 18px;
+        font-weight: 400;
+        color: #1e1e2d;
+    }
+}

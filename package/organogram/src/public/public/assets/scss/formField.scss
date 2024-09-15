@@ -1,0 +1,25 @@
+.select2-container .select2-selection--single{
+    height: 40px;
+    border: 1px solid #e2e5ec;
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-top: 10px;
+}
+.input-group-addon{
+    border: 1px solid #e2e5ec;
+}
+.form-row .col-md-6{
+        width: 100%;
+        flex: 0 0 100% !important;
+        max-width: 100%;
+}
+.col-md-6{
+    width: 100%;
+    flex: 0 0 50% !important;
+    max-width: 100%;
+}
+.input-group{
+    input{
+        height: 40px;
+    }
+}

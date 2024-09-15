@@ -1,0 +1,8 @@
+{
+    "realm": "ndoptor",
+    "auth-server-url": "https://iam-test.n-doptor.cloud/auth/",
+    "ssl-required": "external",
+    "resource": "ndoptor-admin-local",
+    "public-client": true,
+    "confidential-port": 0
+}
