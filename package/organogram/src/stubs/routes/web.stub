@@ -1,0 +1,6 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+\Illuminate\Support\Facades\Auth::routes();
+
+// Write your routes here
