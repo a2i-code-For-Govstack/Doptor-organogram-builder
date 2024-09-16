@@ -30,7 +30,7 @@
     <div class="row m-0 page-title-wrapper d-md-flex align-items-md-center">
         <div class="col-md-6">
             <div class="title py-2">
-                <h4 class="mb-0 font-weight-bold"><i class="fas fa-list mr-3"></i>{{ __(' স্বাক্ষর পরিবর্তন')}}</h4>
+                <h4 class="mb-0 font-weight-bold"><i class="fas fa-list mr-3"></i>{{ __(' Change signature')}}</h4>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
             <!--begin::Alart-->
             <div class="badge badge-warning align-items-center mt-3" role="alert">
                 <div>
-                    &nbsp;&nbsp;প্রোফাইল সিগনেচার অবশ্যই ২২০ x ১১০ পিক্সেল (প্রস্থ x উচ্চতা) এবং ফাইলের আকার অবশ্যই ৫০ কিলো বাইটের কম এবং JPG বা JPEG ফরমেটে হতে হবে।
+                    &nbsp;&nbsp;Profile signature must be 220 x 110 pixels (width x height) and file size must be less than 50 kilobytes and in JPG or JPEG format.
                 </div>
             </div>
             <!--end::Alart-->
@@ -58,7 +58,7 @@
                     <div class="btn btn-dark">
                         <input type="file" class="file-upload" id="file-upload"
                                name="profile_picture" accept="image/x-png,image/jpeg">
-                        স্বাক্ষর বাছাই করুন
+                               Select signature
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
                             $("#sig").attr("src", base64);
                             Swal.fire({
                                 icon: 'success',
-                                title: 'স্বাক্ষর পরিবর্তন হয়েছে',
+                                title: 'Change signature হয়েছে',
                                 text: ''
                             });
                             $('#signatureBtn').click()

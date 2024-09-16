@@ -1,5 +1,12 @@
 @extends('master')
 @section('content')
+<style>
+@media (max-width: 575.98px) {
+#btn_excel_generate{
+    margin-left: 15px;
+}
+}
+</style>
     <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor sna-common-content-border"
          id="kt_content">
         <!--begin::Subheader-->

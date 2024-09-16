@@ -9,7 +9,7 @@
 
             <div class="ml-3"></div>
             <div>
-                <h3 class="text-white my-1">অনার বোর্ড কর্মকর্তাদের</h3>
+                <h3 class="text-white my-1">Honor Board Officers</h3>
             </div>
             <div class="mr-3 d-flex">
 

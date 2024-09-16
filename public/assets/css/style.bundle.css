@@ -33734,6 +33734,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -35206,6 +35207,10 @@ body {
       -webkit-transition: all 0.3s;
       transition: all 0.3s; }
 
+      .kt-header__topbar{
+        display:none;
+      }
+
 @media (max-width: 1024px) {
   .kt-header__topbar {
     padding: 0 15px;
@@ -36437,7 +36442,36 @@ body {
     margin-left: 1rem; }
 
 @media (max-width: 1024px) {
+  #office_pie_chart, 
+  #unit_pie_chart,
+  #organogram_pie_chart,
+  #user_pie_chart{
+    width:100%;
+    height:100%;
+  }
   .my-custom-style {
     padding: 0.5rem 0.25rem; }
     .my-custom-style .my-custom-element {
       margin-left: 0.5rem; } }
+
+
+
+      .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon, .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-text ,.kt-menu__submenu :is(.kt-menu__link-icon, .kt-menu__link-text),.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__ver-arrow, .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__ver-arrow,.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item > .kt-menu__link .kt-menu__ver-arrow  {
+        color:#fff !important;
+        }
+
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading .kt-menu__link-text, 
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link :is(.kt-menu__link-text, 
+        .kt-menu__link-icon), .kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading .kt-menu__link-text, 
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link :is(.kt-menu__link-text, 
+        .kt-menu__link-icon),.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link :is(.kt-menu__link-icon, .kt-menu__link-text),
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link .kt-menu__ver-arrow, 
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__ver-arrow,
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__ver-arrow {
+          color: #5d78ff !important;
+        }
+      
+        .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__heading, .kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item.kt-menu__item--open > .kt-menu__link{
+          background-color: #5d78ff !important;
+        }
+      

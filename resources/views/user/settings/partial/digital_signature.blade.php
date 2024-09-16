@@ -21,7 +21,7 @@
             <div class="title py-2">
                 <h4 class="mb-0 font-weight-bold solaimanLipi"><i
                         class="fas fa-list mr-3"></i> {{ Auth::user()->employee->name_bng ?? Auth::user()->username  }}
-                    ({{enTobn(Auth::user()->username)}}): ডিজিটাল সার্টিফিকেট</h4>
+                    ({{enTobn(Auth::user()->username)}}): Digital Certificate</h4>
             </div>
         </div>
     </div>
@@ -36,11 +36,11 @@
                     style="text-align: center; margin-left: auto;  margin-right: auto;">
                     <thead class="table-head-color">
                     <tr class="text-center">
-                        <th width="20%">নাম</th>
-                        <th width="15%">সার্টিফিকেট</th>
-                        <th width="15%">সার্টিফিকেট গ্রহণের তারিখ</th>
-                        <th width="25%">অবস্থা</th>
-                        <th width="25%">কার্যক্রম</th>
+                        <th width="20%">Name</th>
+                        <th width="15%">Certificate</th>
+                        <th width="15%">Date of receipt of certificate</th>
+                        <th width="25%">Condition</th>
+                        <th width="25%">Activities</th>
                     </tr>
                     </thead>
                     <tbody>

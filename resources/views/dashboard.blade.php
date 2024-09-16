@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                     <div class="text-end">
-                                        <div style="width: 300px; height: 300px;"><canvas id="office_pie_chart"></canvas>
+                                        <div><canvas id="office_pie_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="text-end">
-                                        <div style="width: 300px; height: 300px;"><canvas id="unit_pie_chart"></canvas>
+                                        <div><canvas id="unit_pie_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="text-end">
-                                        <div style="width: 300px; height: 300px;"><canvas
+                                        <div><canvas
                                                 id="organogram_pie_chart"></canvas>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="text-end">
                                         <div class="text-end">
-                                            <div style="width: 300px; height: 300px;"><canvas id="user_pie_chart"></canvas>
+                                            <div><canvas id="user_pie_chart"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -166,6 +166,10 @@
                     type: 'pie',
                     cutout: 0,
                     data: data,
+                    options: {
+                        responsive: false,
+                        maintainAspecRatio: false,
+                    }
                 };
                 var myChart = new Chart(pie_chart, config);
             }

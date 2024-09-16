@@ -1,0 +1,197 @@
+/* Base styles for the entire page and default font settings */
+body, html {
+  height: 100%; /* Full height for body and html elements */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, Helvetica, sans-serif; /* Set default font */
+}
+
+/* Card styling */
+.card {
+  border-radius: 0 !important; /* Remove border radius */
+  padding: 20px; /* Add padding inside the card */
+}
+
+/* Show password button styling */
+.btn-show-password {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between text and icon */
+  position: absolute;
+  right: 10px; /* Position the button 10px from the right */
+  top: calc(70% - 10px); /* Center the button vertically within the input */
+  cursor: pointer;
+  
+}
+
+/* Positioning of the form group elements */
+.form-group {
+  position: relative; /* Allows the show password button to be positioned inside the input */
+}
+
+/* Center the login card on the page and set a maximum width */
+.my-login-page {
+  max-width: 400px; /* Set the maximum width of the login page */
+  margin: 0 auto; /* Center the login page horizontally */
+  padding: 20px; /* Add padding around the login page */
+}
+
+/* Navbar styling */
+.navbar {
+  padding: 10px; /* Add padding inside the navbar */
+  background-color: #f8f9fa; /* Light grey background for the navbar */
+}
+
+/* Logo image inside the navbar */
+.navbar__logo img {
+  max-width: 100px; /* Set a maximum width for the logo */
+}
+
+/* Footer styling */
+.footer {
+  text-align: center; /* Center the text inside the footer */
+  margin-top: 20px; /* Add margin at the top of the footer */
+  padding: 10px; /* Add padding inside the footer */
+  background-color: #f8f9fa; /* Light grey background for the footer */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .my-login-page {
+    margin: 20px; /* Adjust margin for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .navbar__logo img {
+    max-width: 80px; /* Adjust logo size for tablet-sized screens */
+  }
+}
+
+/* Responsive design for very small screens (like mobile phones) */
+@media (max-width: 480px) {
+  .my-login-page {
+    margin: 10px; /* Adjust margin for very small screens */
+    padding: 5px; /* Adjust padding for very small screens */
+  }
+  .navbar__logo img {
+    max-width: 60px; /* Adjust logo size for mobile screens */
+  }
+  .btn-show-password {
+    right: 5px; /* Adjust button position for smaller screens */
+  }
+}
+
+/* Set up a flexbox container that centers content both horizontally and vertically */
+.my-login-page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 80vh; /* Set height to 80% of the viewport */
+}
+
+/* Styling for the card that holds the login form */
+.card {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Rounded corners for the card */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 350px; /* Set a specific width for the card */
+}
+
+/* Navbar styling including shadow for depth */
+.navbar {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 10px; /* Padding inside the navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Adjust the size of the logo inside the navbar */
+.navbar img {
+  height: 40px; /* Set height of the logo */
+}
+
+/* Footer styling */
+.footer {
+  text-align: center; /* Center the text inside the footer */
+  color: #fff; /* White text color */
+  margin-top: 20px; /* Margin at the top of the footer */
+}
+
+/* Add a green shadow to form inputs */
+.shadow-green {
+  box-shadow: 0 4px 8px rgba(56, 193, 114, 0.6); /* Green shadow */
+}
+
+/* Container for the language selector in the navbar */
+.navbar-language {
+  display: flex;
+  justify-content: flex-end; /* Align language selector to the right */
+  align-items: center; /* Center the content vertically */
+}
+
+/* Hide default styles of the Google Translate gadget */
+.goog-te-gadget {
+  font-size: 0; /* Hide original styles */
+}
+
+/* Styling for the Google Translate language selector */
+.goog-te-gadget .goog-te-combo {
+  background: #38c172; /* Green background */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Padding inside the selector */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size for the selector */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 10px; /* Margin to the left of the selector */
+}
+
+/* Hide the Google Translate banner that appears at the top */
+body .goog-te-banner-frame.skiptranslate {
+  display: none !important; /* Hide the banner */
+}
+
+/* Hide original styles of the Google Translate widget */
+.skiptranslate.goog-te-gadget > span {
+  display: none; /* Hide the default span */
+}
+
+/* Styling for buttons and checkboxes with a success theme */
+.btn-success {
+  background-color: #38c172 !important; /* Green background for buttons */
+  border-color: #38c172 !important; /* Green border for buttons */
+}
+
+.btn-success:hover {
+  background-color: #2b8a3e; /* Slightly darker shade on hover */
+  border-color: #2b8a3e; /* Darker border on hover */
+}
+
+.radio-success input[type="radio"]:checked ~ span {
+  background-color: #38c172; /* Green background for checked radio button */
+}
+
+.radio-success input[type="radio"]:checked ~ span:after {
+  border-color: #38c172; /* Green border for the radio button */
+}
+
+.radio-success input[type="radio"] {
+  accent-color: #38c172; /* Green accent color for modern browsers */
+}
+
+/* Container to center content vertically and horizontally */
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  height: 90vh; /* Full viewport height */
+  align-items: center; /* Center vertically */
+}
+
+/* Change the color of the language option in the navigation bar */
+.navbar-language select, 
+.navbar-language option {
+  color: black; /* Set text color to black */
+}

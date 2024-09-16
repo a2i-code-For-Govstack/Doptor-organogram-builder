@@ -119,38 +119,8 @@
                 </div>
             </div>
 
-            <!-- Alert Section -->
-            <div class="badge badge-warning align-items-center mt-3" role="alert">
-                <div>
-                    &nbsp;&nbsp;Profile picture must be 300 x 300 pixels (width x height) and file size must be less than 50 kilobytes and in JPG or JPEG format.
-                </div>
-            </div>
 
-            <!-- Modal for Cropping Image -->
-            <div class="modal" id="myModal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">ছবি ক্রপ করুন</h4>
-                            <button type="button" class="close" data-dismiss="modal"></button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <div id="resizer"></div>
-                            <button onclick="return false;" class="btn rotate float-left" data-deg="90">
-                                <i class="fas fa-undo"></i></button>
-                            <button onclick="return false;" class="btn rotate float-right" data-deg="-90">
-                                <i class="fas fa-redo"></i></button>
-                            <hr>
-                            <button class="btn btn-block btn-dark" id="upload" onclick="saveImage(event)">
-                                সংরক্ষণ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
         <!--end::Body-->
     </form>
     <!--end::Form-->

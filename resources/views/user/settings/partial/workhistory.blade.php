@@ -18,8 +18,7 @@
         <div class="col-md-6">
             <div class="title py-2">
                 <h4 class="mb-0 font-weight-bold solaimanLipi"><i class="fas fa-list mr-3"></i> {{ Auth::user()->employee->name_bng ?? Auth::user()->username  }}
-                    ({{enTobn(Auth::user()->username)}}): কর্ম
-                    ইতিহাস</h4>
+                    ({{enTobn(Auth::user()->username)}}):Work History</h4>
             </div>
         </div>
     </div>
@@ -32,11 +31,11 @@
                 <table  class="tapp_table table table-striped table-bordered table-hover table-checkable  custom-table-border">
             <thead class="table-head-color">
                 <tr class="text-center">
-                        <th width="10%">অফিস নাম (বাংলা)</th>
-                        <th width="10%">শাখা(বাংলা)</th>
-                        <th width="10%">পদবি</th>
-                        <th width="10%">শুরু কার্যদিবস</th>
-                        <th width="10%">শেষ কার্যদিবস</th>
+                        <th width="10%">Office Name</th>
+                        <th width="10%">Branch</th>
+                        <th width="10%">Last name</th>
+                        <th width="10%">Start working day</th>
+                        <th width="10%">Last working day</th>
                     </tr>
                     </thead>
                     <tbody>

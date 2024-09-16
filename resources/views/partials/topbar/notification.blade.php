@@ -6,24 +6,65 @@
     .notification .badge {
         position: absolute;
         margin-top: 5px;
-        margin-right: -30px;
+        margin-right: 30px;
         border-radius: 50%;
         background-color: #fd397a;
         color: white;
     }
+
+    .kt-quick-panel {
+        position: fixed;
+        top: 0;
+        right: 100 !important;
+        bottom: 0;
+        width: 300px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1050;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        opacity: 0;
+    }
+
+    .kt-quick-panel--on {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .kt-quick-panel__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .kt-quick-panel__title {
+        margin: 0;
+    }
+
+    .kt-quick-panel__close {
+        cursor: pointer;
+    }
+
+    .load-message-data {
+        padding: 15px;
+        overflow-y: auto;
+        max-height: 60vh;
+    }
 </style>
 
-<div class="kt-header__topbar-item" data-toggle="kt-tooltip" title="নোটিফিকেশন" data-placement="bottom">
+<div class="kt-header__topbar-item" data-toggle="kt-tooltip" title="Notification" data-placement="bottom">
     <a type="button" data-dismiss="modal" id="showNotifications" class="btn btn-icon btn-outline-info btn-sm notification"
-        style="width:35px;height:35px;border:solid 1px;padding:3px;border-radius:3px;color:#4444f3!important;">
+       style="width:35px;height:35px;border:solid 1px;padding:3px;border-radius:3px;color:#4444f3!important;">
         <i style="font-size: 22px" class="fa fa-bell"></i>
         <span class="badge" id="notification_count"></span>
     </a>
 </div>
 <!-- begin::Form Quick Panel -->
 <div id="kt_quick_panel_notification" class="kt-quick-panel py-5 px-3">
-    <div class="kt_quick_panel__head">
-        <h4 class="kt_quick_panel__title mb-0 font-weight-bold">নোটিফিকেশন</h4>
+    <div class="kt-quick-panel__head">
+        <h4 style="color: black;" class="kt-quick-panel__title mb-0 font-weight-bold">Notification</h4>
         <hr>
         <a href="#" class="kt-quick-panel__close" id="kt_quick_notification_close_btn"><i
                 class="flaticon2-delete"></i></a>
@@ -33,10 +74,9 @@
 </div>
 <!-- end::Form Quick Panel -->
 
-
 <!-- Start Modal -->
 <div class="modal fade" id="showMessageModal" tabindex="-1" role="dialog" aria-labelledby="showMessageModalLabel"
-    aria-hidden="true" data-toggle="modal" data-backdrop="false" data-keyboard="false">
+     aria-hidden="true" data-toggle="modal" data-backdrop="false" data-keyboard="false">
     <div class="modal-dialog modal-lg">
         <div class="modal-content shadow-lg p-3 mb-5 bg-white rounded">
             <div class="modal-header">
@@ -57,18 +97,15 @@
 </div>
 
 <script>
-    $(document).on('click', "#showNotifications", function() {
+    $(document).on('click', "#showNotifications", function () {
         $("#kt_quick_panel_notification").addClass('kt-quick-panel--on');
-        $("#kt_quick_panel_notification").css('opacity', 1);
     });
 
-    $("#kt_quick_notification_close_btn").click(function() {
-        $("#kt_quick_panel_notification").removeAttr('style');
-        $("#kt_quick_panel_notification").css('opacity', 0);
+    $("#kt_quick_notification_close_btn").click(function () {
         $("#kt_quick_panel_notification").removeClass('kt-quick-panel--on');
     });
 
-    $(function() {
+    $(function () {
         $('[data-toggle="tooltip"]').tooltip();
         if ($(".load-message-data").length > 0) {
             loadNotification();
@@ -79,13 +116,13 @@
         var url = 'notification_message';
         var data = {};
         var datatype = 'JSON';
-        ajaxCallAsyncCallback(url, data, datatype, 'GET', function(responseData) {
+        ajaxCallAsyncCallback(url, data, datatype, 'GET', function (responseData) {
             var data = responseData.notification;
             $('#view_message').empty();
             $('#notification_count').text(enTobn(responseData.count));
             if (data['read'] || data['unread']) {
                 if (data['read']) {
-                    $.each(data['read'], function(key, value) {
+                    $.each(data['read'], function (key, value) {
                         $('#view_message').prepend(
                             "<div class='card mt-3'> <a data-toggle='modal'data-target='#showMessageModal' onClick='showMessage(" +
                             value.id +
@@ -97,7 +134,7 @@
                     });
                 }
                 if (data['unread']) {
-                    $.each(data['unread'], function(key, value) {
+                    $.each(data['unread'], function (key, value) {
                         $('#view_message').prepend(
                             "<div class='card mt-3'> <a data-toggle='modal'data-target='#showMessageModal' onClick='showMessage(" +
                             value.id +
@@ -109,17 +146,17 @@
                     });
                 }
             } else {
-                $('#view_message').append("<h4>কোনো নোটিফিকেশন নেই</h4>")
+                $('#view_message').append("<h4>কোনো Notification নেই</h4>")
             }
         });
     }
 
     function showMessage(id) {
 
-        $(".close-message").click(function() {
+        $(".close-message").click(function () {
             loadNotification();
         });
-        $(".close-button").click(function() {
+        $(".close-button").click(function () {
             loadNotification();
         });
 
@@ -128,7 +165,7 @@
             id
         };
         var datatype = 'JSON';
-        ajaxCallAsyncCallback(url, data, datatype, 'GET', function(responseData) {
+        ajaxCallAsyncCallback(url, data, datatype, 'GET', function (responseData) {
             $("#msg_header").text(responseData[0].title).css({
                 'font-size': '13px !important'
             });

@@ -1,112 +1,171 @@
 @extends('layouts.guest')
 
 @section('title')
-    পাসওয়ার্ড রিসেট
+Password Reset
 @endsection
+
 @section('style')
-    <style>
-        .login.login-4 .login-container .login-content.login-content-signup {
-            width: 45%;
-        }
+<link rel="stylesheet" href="{{ asset('assets/css/password_reset.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+<style>
+    /* Custom Styles for the Card */
+    .card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 370px;
+        margin: 60px auto;
+        font-family: 'Arial', sans-serif;
+    }
 
-        .wizard-icon-active {
-            transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
-            background-color: #C9F7F5 !important;
-        }
-    </style>
+    .card-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 16px;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        transition: all 0.2s;
+    }
+
+    .form-control:focus {
+        border-color: #38c172;
+        box-shadow: 0 0 0 3px rgba(56, 193, 114, 0.2);
+    }
+
+    .btn-success {
+        background-color: #38c172;
+        border-color: #38c172;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .btn-success:hover {
+        background-color: #2b8a3e;
+        border-color: #2b8a3e;
+    }
+
+    .invalid-feedback {
+        color: #e3342f;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        text-align: center;
+        color: #666;
+        margin-top: 30px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        font-size: 14px;
+    }
+
+    .navbar {
+        background: #ffffff;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .navbar__logo img {
+        height: 40px;
+    }
+
+    .text-center a {
+        color: #38c172;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .text-center a:hover {
+        text-decoration: underline;
+    }
+</style>
 @endsection
+
 @section('content')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
-    <div class="container bg-white">
-        <div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login"
-             style="padding-top: 5%">
-            <div
-                class="login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-10 pb-12">
-                <div class="login-content login-content-signup d-flex flex-column">
-                    <div class="d-flex flex-column-auto flex-column px-10">
-                        <a href="{{ url('/') }}" class="login-logo pb-lg-4 pb-10 text-center">
-                            <img src="{{ asset('assets/img/ndoptor.svg') }}" class="max-h-90px" alt=""/>
-                        </a>
-                        {{-- <div class="wizard-nav pt-4 pt-lg-10 pb-10">
-                            @include('user.password_reset.partial.wizerd')
-                        </div> --}}
-                    </div>
-                    <div class="login-form">
-                        <form class="form px-10" novalidate="novalidate" id="kt_login_signup_form">
-                            <div class="pb-5" id="account_find">
-                                <div class="pb-10 pb-lg-12">
-                                    <div class="text-muted font-weight-bold font-size-h4">পাসওয়ার্ড ভুলে যান নি?
-                                        <a href="{{ $return_login_url ?: url('/') }}"
-                                           class="text-primary font-weight-bolder">লগইন</a>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="font-size-h3 font-weight-bolder text-dark">ইউজারনেম অথবা ইউজার
-                                        আইডি</label>
-                                    <input type="text"
-                                           class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6"
-                                           name="username" placeholder="ইউজারনেম অথবা ইউজার আইডি" id="username"/>
-                                </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="form-group row">
-                                            <div class="col-6 col-form-label">
-                                                <div class="radio-list">
-                                                    <label class="radio radio-success radio-rounded">
-                                                        <input type="radio" checked id="emailMedium"
-                                                               onclick="changeVerifyMedium('mail')"/>
-                                                        <span></span>
-                                                        ই-মেইল
-                                                    </label>
-                                                    <div class="input-group" id="emailgroup">
-                                                        <div class="input-group-prepend"><span class="input-group-text"><i
-                                                                    class="fa fa-envelope icon-lg"></i></span></div>
-                                                        <input type="email" class="form-control" placeholder="ই-মেইল"
-                                                               name="emailaddress" id="emailaddress"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-form-label">
-                                                <div class="radio-list">
-                                                    <label class="radio radio-success radio-rounded">
-                                                        <input type="radio" id="phoneMedium"
-                                                               onclick="changeVerifyMedium('phone')"/>
-                                                        <span></span>
-                                                        মোবাইল নম্বর
-                                                    </label>
-                                                    <div class="input-group d-none" id="phonegroup">
-                                                        <div class="input-group-prepend"><span class="input-group-text"><i
-                                                                    class="fa fa-mobile icon-lg"></i></span></div>
-                                                        <input type="text" class="form-control"
-                                                               placeholder="মোবাইল নম্বর" name="phonenumber"
-                                                               id="phonenumber"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="choose_medium">
-                                    <button type="button"
-                                            class="btn btn-primary font-weight-bolder font-size-h6 pl-8 pr-4 py-4 my-3 float-right"
-                                            id="choose_medium_submit">পরবর্তী
-                                        <span class="svg-icon svg-icon-md ml-2">
-                                            @include('user.password_reset.partial.nextbutton')
-                                        </span>
-                                    </button>
-                                </div>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar__logo">
+            <img src="https://seeklogo.com/images/A/a2i-logo-5D16E2F1C3-seeklogo.com.png" alt="Logo">
+        </div>
+        <div class="navbar-language" id="google_translate_element"></div>
+    </div>
+</nav>
 
-                            </div>
-                        </form>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title"><i class="bi bi-arrow-clockwise" style="font-size: 22px; color:black"></i> Reset Password</h2>
+            <hr>
+            <form method="POST" action="{{ route('password.email') }}" class="my-login-validation" novalidate>
+                @csrf
+                <div class="form-group">
+                    <label for="username">Username or User ID</label>
+                    <input id="username" type="text" class="form-control" name="username" required autofocus>
+                    <div class="invalid-feedback">
+                        Please enter your username or user ID.
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class="form-control" name="email" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input id="phone" type="text" class="form-control" name="phone">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Send Password Reset Link</button>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <a href="{{ route('login') }}">Remembered your password? Login</a>
+                </div>
+            </form>
         </div>
-        <!--end::Login-->
     </div>
+</div>
+
 @endsection
+
 @section('script')
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    @include('scripts.reset_pass')
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+@include('scripts.reset_pass')
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,bn'
+        }, 'google_translate_element');
+    }
+    const sc = document.querySelector('.navbar-language');
+    const config = { attributes: false, childList: true, subtree: true };
+    const observer = new MutationObserver(function (mutationsList, observer) {
+        const sc = document.querySelector('.goog-te-gadget');
+        sc.childNodes[1].textContent = '';
+    });
+
+    observer.observe(sc, config);
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 @endsection
